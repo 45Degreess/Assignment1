@@ -3,6 +3,7 @@ import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.DecimalFormat;
 public class GenericsKB_Array
 {
     private Generic [] genericArr = new Generic[2000000];
@@ -50,11 +51,26 @@ public class GenericsKB_Array
     public String display(String term)
     {
         Generic temp = search(term);
-        if(temp.getTerm().equals(term))
+        if(temp != null)
         {
             return temp.toString();
         }
         return "The term is not in the database";
+    }
+
+    public String display(String term, String sentence)
+    {
+        Generic temp = search(term);
+        if(temp != null)
+        {
+            if(temp.getSentence().equals(sentence))
+            {
+                DecimalFormat deci = new DecimalFormat("0.00");
+                return deci.format(temp.getConfidence_score());
+            }
+            return null;
+        }
+        return null;
     }
 }
 
