@@ -46,5 +46,15 @@ public class GenericsKB_Array
         }
         return null;
     }
+
+    public String display(String term)
+    {
+        Generic temp = search(term);
+        if(temp.getTerm().equals(term))
+        {
+            return temp.toString();
+        }
+        return "The term is not in the database";
+    }
 }
 
