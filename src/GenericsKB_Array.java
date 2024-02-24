@@ -34,5 +34,17 @@ public class GenericsKB_Array
             System.out.println(e.getMessage());
         }
     }
+    
+    private Generic search(String term)
+    {
+        for (int i = 0; i <size; i++)
+        {
+            if(genericArr[i].getTerm().equals(term))
+            {
+                return genericArr[i];
+            }
+        }
+        return null;
+    }
 }
 
