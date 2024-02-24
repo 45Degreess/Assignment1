@@ -47,4 +47,9 @@ public class Generic
         sentence = inSentence;
         confidence_score = inConfidence;
     }
+
+    public String toString()
+    {
+        return sentence + " (Confidence score: "+ confidence_score +")";
+    }
 }
