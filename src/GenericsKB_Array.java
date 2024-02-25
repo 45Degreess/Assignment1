@@ -8,6 +8,8 @@ public class GenericsKB_Array
 {
     private Generic [] genericArr = new Generic[2000000];
     private int size = 0; // Variable storing the amount of elements in the array
+    private int searchIndex = -1; //Holds the index in the array of a variable found in array
+
     //reads in data from text file to the array of generics objects
     public void readData(String textFile)
     {
@@ -21,8 +23,17 @@ public class GenericsKB_Array
                 String term = temp[0];
                 String sentence = temp[1];
                 double confidence = Double.parseDouble(temp[2]);
-                genericArr[size] = new Generic(term,sentence,confidence);
-                size++;
+                Generic present = search(term);
+                if(present == null)
+                {
+                    genericArr[size] = new Generic(term, sentence, confidence);
+                    size++;
+                }
+                else
+                {
+                    genericArr[searchIndex].update(term,confidence);
+                    searchIndex = -1;
+                }
             }
             ff.close();
         }
@@ -42,9 +53,11 @@ public class GenericsKB_Array
         {
             if(genericArr[i].getTerm().equals(term))
             {
+                searchIndex = i;
                 return genericArr[i];
             }
         }
+        searchIndex = -1;
         return null;
     }
 
@@ -73,4 +86,3 @@ public class GenericsKB_Array
         return null;
     }
 }
-
