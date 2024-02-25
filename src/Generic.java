@@ -1,4 +1,8 @@
 //Class used to store the term, the generic sentence and the confidence score
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
+
 public class Generic
 {
     private String term,sentence;
@@ -50,6 +54,9 @@ public class Generic
 
     public String toString()
     {
-        return sentence + " (Confidence score: "+ confidence_score +")";
+        DecimalFormat deci = new DecimalFormat("0.00");
+        //change decimal separator to a point(.)
+        deci.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.ENGLISH));
+        return sentence + " (Confidence score: "+ deci.format(confidence_score) +")";
     }
 }
