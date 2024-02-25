@@ -4,6 +4,9 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
+
 public class GenericsKB_Array
 {
     private Generic [] genericArr = new Generic[2000000];
@@ -11,7 +14,7 @@ public class GenericsKB_Array
     private int searchIndex = -1; //Holds the index in the array of a variable found in array
 
     //reads in data from text file to the array of generics objects
-    public void readData(String textFile)
+    public GenericsKB_Array(String textFile)
     {
         try
         {
@@ -31,8 +34,11 @@ public class GenericsKB_Array
                 }
                 else
                 {
-                    genericArr[searchIndex].update(term,confidence);
-                    searchIndex = -1;
+                    if(present.getConfidence_score() < confidence)
+                    {
+                        genericArr[searchIndex].update(sentence, confidence);
+                        searchIndex = -1;
+                    }
                 }
             }
             ff.close();
@@ -47,6 +53,7 @@ public class GenericsKB_Array
         }
     }
     
+    //Linear search that goes through the array sequentially until the term is found, returns a null String if nothing is found
     private Generic search(String term)
     {
         for (int i = 0; i <size; i++)
@@ -61,6 +68,7 @@ public class GenericsKB_Array
         return null;
     }
 
+    //returns the statement of the term given if the term is on the database
     public String display(String term)
     {
         Generic temp = search(term);
@@ -71,6 +79,7 @@ public class GenericsKB_Array
         return "The term is not in the database";
     }
 
+    //returns the confidence score of the term if the term is in the database.
     public String display(String term, String sentence)
     {
         Generic temp = search(term);
@@ -79,10 +88,30 @@ public class GenericsKB_Array
             if(temp.getSentence().equals(sentence))
             {
                 DecimalFormat deci = new DecimalFormat("0.00");
+                //change decimal separator to a point(.)
+                deci.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.ENGLISH));
                 return deci.format(temp.getConfidence_score());
             }
             return null;
         }
         return null;
+    }
+
+    public void userAdd(String term,String sentence, double confidence)
+    {
+        Generic present = search(term);
+        if(present == null)
+        {
+            genericArr[size] = new Generic(term, sentence, confidence);
+            size++;
+        }
+        else
+        {
+            if(present.getConfidence_score() < confidence)
+            {
+                genericArr[searchIndex].update(sentence, confidence);
+                searchIndex = -1;
+            }
+        }
     }
 }
