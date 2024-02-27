@@ -62,4 +62,32 @@ public class BinarySearchTree<dataType extends Comparable>
                 insert(d,node.getRight());
         }
     }
+
+    //recursively iterates through the BinarySearchTree and returns a value if the data matches
+    public BSTNode<dataType> search(dataType d)
+    {
+        if(root == null)
+            return null;
+        return search(d,root);
+    }
+
+    public BSTNode<dataType> search(dataType d,BSTNode node)
+    {
+        if(d.compareTo(node.getData()) ==0)
+            return node;
+        else if (d.compareTo(node.getData()) <0)
+        {
+            if(node.getLeft() ==null)
+                return null;
+            else
+                return search(d,node.getLeft());
+        }
+        else
+        {
+            if(node.getRight() ==null)
+                return null;
+            else
+                return search(d,node.getRight());
+        }
+    }
 }
