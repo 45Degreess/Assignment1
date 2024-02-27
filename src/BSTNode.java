@@ -25,4 +25,19 @@ public class BSTNode<dataType>
     {
         return data;
     }
+
+    public void setLeft(BSTNode inLeft)
+    {
+        left = inLeft;
+    }
+
+    public void setRight(BSTNode inRight)
+    {
+        right = inRight;
+    }
+
+    public void setData(dataType inData)
+    {
+        data = inData;
+    }
 }
