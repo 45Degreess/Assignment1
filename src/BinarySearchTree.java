@@ -1,4 +1,4 @@
-public class BinarySearchTree<dataType>
+public class BinarySearchTree<dataType extends Comparable>
 {
     BSTNode<dataType> root;
 
@@ -34,5 +34,32 @@ public class BinarySearchTree<dataType>
             return 0;
         else
             return 1 + getSize(node.getLeft()) + getSize(node.getRight());
+    }
+
+    //Inserts data in the tree
+    public void insert(dataType d)
+    {
+        if(root ==null)
+            root = new BSTNode<dataType>(d,null,null);
+        else
+            insert(d,root);
+    }
+
+    private void insert(dataType d,BSTNode node)
+    {
+        if(d.compareTo(node.getData()) <= 0)
+        {
+            if(node.getLeft() == null)
+                node.setLeft(new BSTNode<dataType>(d,null,null));
+            else
+                insert(d,node.getLeft());
+        }
+        else
+        {
+            if(node.getRight() == null)
+                node.setRight(new BSTNode<dataType>(d,null,null));
+            else
+                insert(d,node.getRight());
+        }
     }
 }
