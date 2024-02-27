@@ -1,4 +1,4 @@
-public class BSTNode<dataType>
+public class BSTNode<dataType extends Comparable>
 {
     private dataType data;
     private BSTNode<dataType> left;
