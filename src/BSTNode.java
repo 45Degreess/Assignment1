@@ -20,4 +20,9 @@ public class BSTNode<dataType>
     {
         return right;
     }
+
+    public dataType getData()
+    {
+        return data;
+    }
 }
