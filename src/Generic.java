@@ -62,6 +62,6 @@ public class Generic implements Comparable<Generic>
 
     public int compareTo(Generic other)
     {
-            return sentence.compareTo(other.sentence);
+            return term.compareTo(other.term);
     }
 }
