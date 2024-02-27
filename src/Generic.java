@@ -3,7 +3,7 @@ import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 
-public class Generic
+public class Generic implements Comparable<Generic>
 {
     private String term,sentence;
     private double confidence_score;
@@ -58,5 +58,10 @@ public class Generic
         //change decimal separator to a point(.)
         deci.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.ENGLISH));
         return sentence + " (Confidence score: "+ deci.format(confidence_score) +")";
+    }
+
+    public int compareTo(Generic other)
+    {
+            return sentence.compareTo(other.sentence);
     }
 }
