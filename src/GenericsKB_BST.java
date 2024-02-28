@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 public class GenericsKB_BST
 {
-    private BinarySearchTree<Generic> bst;
+    private BinarySearchTree<Generic> bst = new BinarySearchTree<>();
 
     public GenericsKB_BST(String file)
     {
@@ -31,5 +31,11 @@ public class GenericsKB_BST
         {
             System.out.println(e.getMessage());
         }
+    }
+
+    public String display(String term)
+    {
+        BSTNode<Generic> node = bst.search(new Generic(term,"",0));
+        return node.getData().toString();
     }
 }
