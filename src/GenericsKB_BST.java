@@ -7,6 +7,7 @@ public class GenericsKB_BST
 {
     private BinarySearchTree<Generic> bst = new BinarySearchTree<>();
 
+    //Reads in data from file and populates the BST
     public GenericsKB_BST(String file)
     {
         try
@@ -19,7 +20,13 @@ public class GenericsKB_BST
                 String term = temp[0];
                 String sentence = temp[1];
                 double confidence = Double.parseDouble(temp[2]);
-                bst.insert(new Generic(term, sentence, confidence));
+                BSTNode<Generic> present = bst.search(new Generic(term,sentence,confidence));
+                if(present == null)
+                    bst.insert(new Generic(term, sentence, confidence));
+                else if(present.getData().getConfidence_score() <confidence)
+                {
+                    present.getData().update(sentence, confidence);
+                }
             }
             ff.close();
         }
