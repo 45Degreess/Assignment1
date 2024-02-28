@@ -28,9 +28,7 @@ public class GenericsKB_BST
                 if(present == null)
                     bst.insert(new Generic(term, sentence, confidence));
                 else if(present.getData().getConfidence_score() <confidence)
-                {
                     present.getData().update(sentence, confidence);
-                }
             }
             ff.close();
         }
@@ -67,5 +65,15 @@ public class GenericsKB_BST
             return null;
         }
         return null;
+    }
+
+    public void userAdd(String term,String sentence, double confidence)
+    {
+        Generic insert = new Generic(term,sentence,confidence);
+        BSTNode<Generic> node = bst.search(insert);
+        if(node == null)
+            bst.insert(insert);
+        else if(node.getData().getConfidence_score() <confidence)
+            node.getData().update(sentence, confidence);
     }
 }
