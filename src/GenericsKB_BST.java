@@ -3,6 +3,10 @@ import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
+
 public class GenericsKB_BST
 {
     private BinarySearchTree<Generic> bst = new BinarySearchTree<>();
@@ -43,6 +47,25 @@ public class GenericsKB_BST
     public String display(String term)
     {
         BSTNode<Generic> node = bst.search(new Generic(term,"",0));
-        return node.getData().toString();
+        if( node != null)
+            return node.getData().toString();
+        return null;
+    }
+
+    public String display(String term, String sentence)
+    {
+        BSTNode<Generic> node = bst.search(new Generic(term,"",0));
+        if(node != null)
+        {
+            if(node.getData().getSentence().equals(sentence))
+            {
+                DecimalFormat deci = new DecimalFormat("0.00");
+                //change decimal separator to a point(.)
+                deci.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.ENGLISH));
+                return deci.format(node.getData().getConfidence_score());
+            }
+            return null;
+        }
+        return null;
     }
 }
