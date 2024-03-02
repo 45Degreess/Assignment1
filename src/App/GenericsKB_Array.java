@@ -13,8 +13,8 @@ import java.util.Locale;
 
 public class GenericsKB_Array
 {
-    private Generic [] genericArr = new Generic[2000000];
-    private int size = 0; // Variable storing the amount of elements in the array
+    private Generic [] genericArr;
+    private int size; // Variable storing the amount of elements in the array
     private int searchIndex = -1; //Holds the index in the array of a variable found in array
 
     //reads in data from text file to the array of generics objects
@@ -22,6 +22,8 @@ public class GenericsKB_Array
     {
         try
         {
+            genericArr = new Generic[2000000];
+            size = 0;
             BufferedReader ff = new BufferedReader(new FileReader(textFile));
             String line;
             while((line = ff.readLine()) != null)
@@ -56,7 +58,7 @@ public class GenericsKB_Array
             System.out.println(e.getMessage());
         }
     }
-    
+
     //Linear search that goes through the array sequentially until the term is found, returns a null String if nothing is found
     private Generic search(String term)
     {
@@ -101,13 +103,14 @@ public class GenericsKB_Array
         return "The term is not in the database";
     }
 
-    public void userAdd(String term,String sentence, double confidence)
+    public String userAdd(String term,String sentence, double confidence)
     {
         Generic present = search(term);
         if(present == null)
         {
             genericArr[size] = new Generic(term, sentence, confidence);
             size++;
+            return "A new term was added to the database";
         }
         else
         {
@@ -115,7 +118,9 @@ public class GenericsKB_Array
             {
                 genericArr[searchIndex].update(sentence, confidence);
                 searchIndex = -1;
+                return "The term in the database was updated";
             }
+            return "The confidence score inputed is lower than the existing score";
         }
     }
 
