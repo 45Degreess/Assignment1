@@ -36,6 +36,10 @@ public class Generic implements Comparable<Generic>
     //Method to access the confidence score
     public double getConfidence_score()
     {
+        //Return confidence score rounded of to 3 decimal places
+        DecimalFormat deci = new DecimalFormat("0.000");
+        deci.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.ENGLISH));
+        confidence_score = Double.parseDouble(deci.format(confidence_score));
         return confidence_score;
     }
 

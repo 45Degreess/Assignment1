@@ -1,5 +1,8 @@
 package App;
 
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -114,5 +117,20 @@ public class GenericsKB_Array
                 searchIndex = -1;
             }
         }
+    }
+
+    public TableModel populateTable(JTable table)
+    {
+        DefaultTableModel model =(DefaultTableModel) table.getModel();
+        Object rowData [] = new Object[3];
+
+        for(int i =0; i < size; i++)
+        {
+            rowData[0] = genericArr[i].getTerm();
+            rowData[1] = genericArr[i].getSentence();
+            rowData[2] = genericArr[i].getConfidence_score();
+            model.addRow(rowData);
+        }
+        return model;
     }
 }
