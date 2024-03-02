@@ -62,7 +62,7 @@ public class GenericsKB_Array
     {
         for (int i = 0; i <size; i++)
         {
-            if(genericArr[i].getTerm().equals(term))
+            if(genericArr[i].equals(term))
             {
                 searchIndex = i;
                 return genericArr[i];
@@ -89,16 +89,16 @@ public class GenericsKB_Array
         Generic temp = search(term);
         if(temp != null)
         {
-            if(temp.getSentence().equals(sentence))
+            if(temp.getSentence().equalsIgnoreCase(sentence))
             {
                 DecimalFormat deci = new DecimalFormat("0.00");
                 //change decimal separator to a point(.)
                 deci.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.ENGLISH));
-                return deci.format(temp.getConfidence_score());
+                return "The confidence score for the term and statement is: "+deci.format(temp.getConfidence_score());
             }
-            return null;
+            return "Term found but statement is not in the database";
         }
-        return null;
+        return "The term is not in the database";
     }
 
     public void userAdd(String term,String sentence, double confidence)
