@@ -1,4 +1,4 @@
-//Class used to store the term, the generic sentence and the confidence score
+package App;//Class used to store the term, the generic sentence and the confidence score
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.Locale;
@@ -42,7 +42,7 @@ public class Generic implements Comparable<Generic>
     //Method that checks if the term parsed through is the same as the term of the Generic object
     public boolean equals(String term)
     {
-        return this.term.equals(term);
+        return this.term.equalsIgnoreCase(term);
     }
 
     //Method to update the sentence given the term
