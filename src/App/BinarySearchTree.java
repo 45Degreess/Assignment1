@@ -1,3 +1,5 @@
+package App;
+
 public class BinarySearchTree<dataType extends Comparable>
 {
     BSTNode<dataType> root;

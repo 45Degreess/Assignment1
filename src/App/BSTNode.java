@@ -1,3 +1,5 @@
+package App;
+
 public class BSTNode<dataType extends Comparable>
 {
     private dataType data;
