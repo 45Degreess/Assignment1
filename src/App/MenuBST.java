@@ -5,6 +5,7 @@
 package App;
 
 import java.io.File;
+import javax.swing.table.TableColumnModel;
 
 /**
  *
@@ -32,13 +33,13 @@ public class MenuBST extends javax.swing.JFrame
         pnlAdd.setVisible(false);
         pnlLoad.setVisible(false);
 
-        /*tblHome.setModel(arr.populateTable(tblHome));
+        tblHome.setModel(arr.populateTable(tblHome));
         TableColumnModel columnModel = tblHome.getColumnModel();
         columnModel.getColumn(0).setPreferredWidth(60);
         columnModel.getColumn(1).setPreferredWidth(450);
         columnModel.getColumn(2).setPreferredWidth(50);
         tblHome.setDefaultEditor(Object.class, null);
-        tblHome.getTableHeader().setReorderingAllowed(false);*/
+        tblHome.getTableHeader().setReorderingAllowed(false);
     }
 
     /**
@@ -405,13 +406,13 @@ public class MenuBST extends javax.swing.JFrame
         pnlAdd.setVisible(false);
         pnlLoad.setVisible(false);
         
-        /*tblHome.setModel(arr.populateTable(tblHome));
+        tblHome.setModel(arr.populateTable(tblHome));
         TableColumnModel columnModel = tblHome.getColumnModel();
         columnModel.getColumn(0).setPreferredWidth(60);
         columnModel.getColumn(1).setPreferredWidth(450);
         columnModel.getColumn(2).setPreferredWidth(50);
         tblHome.setDefaultEditor(Object.class, null);
-        tblHome.getTableHeader().setReorderingAllowed(false);*/
+        tblHome.getTableHeader().setReorderingAllowed(false);
     }//GEN-LAST:event_pnlHomeBSTMouseClicked
 
     private void txtEnterTermActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_txtEnterTermActionPerformed

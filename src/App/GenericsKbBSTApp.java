@@ -1,11 +1,15 @@
 package App;
 
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
+import java.util.ArrayList;
 import java.util.Locale;
 
 public class GenericsKbBSTApp
@@ -90,20 +94,23 @@ public class GenericsKbBSTApp
         return "The confidence score inputed is lower than the existing score";
     }
 
-    /*
+
+
+
     public TableModel populateTable(JTable table)
     {
+        ArrayList<Generic> genericArr= bst.getTableData();
         DefaultTableModel model =(DefaultTableModel) table.getModel();
         model.setRowCount(0);
         Object rowData [] = new Object[3];
-
-        for(int i =0; i < size; i++)
+        System.out.println(genericArr.size());
+        for(int i =0; i < genericArr.size(); i++)
         {
-            rowData[0] = genericArr[i].getTerm();
-            rowData[1] = genericArr[i].getSentence();
-            rowData[2] = genericArr[i].getConfidence_score();
+            rowData[0] = genericArr.get(i).getTerm();
+            rowData[1] = genericArr.get(i).getSentence();
+            rowData[2] = genericArr.get(i).getConfidence_score();
             model.addRow(rowData);
         }
         return model;
-    }*/
+    }
 }

@@ -1,5 +1,7 @@
 package App;
 
+import java.util.ArrayList;
+
 public class BinarySearchTree<dataType extends Comparable>
 {
     BSTNode<dataType> root;
@@ -91,5 +93,28 @@ public class BinarySearchTree<dataType extends Comparable>
             else
                 return search(d,node.getRight());
         }
+    }
+
+
+    //Code used to populate table
+    private dataType visit ( BSTNode<dataType> node )
+    {
+        return node.getData();
+    }
+
+    public ArrayList<dataType> getTableData()
+    {
+        ArrayList<dataType> temp = new ArrayList<>();
+        return postOrder (root,temp);
+    }
+    private ArrayList<dataType> postOrder (BSTNode<dataType> node,ArrayList<dataType> temp )
+    {
+        if (node != null)
+        {
+            postOrder (node.getLeft (),temp);
+            postOrder (node.getRight (),temp);
+            temp.add(visit (node));
+        }
+        return temp;
     }
 }
