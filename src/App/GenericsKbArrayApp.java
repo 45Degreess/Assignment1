@@ -11,14 +11,14 @@ import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 
-public class GenericsKB_Array
+public class GenericsKbArrayApp
 {
     private Generic[] genericArr = new Generic[2000000];
     private int size = 0; // Variable storing the amount of elements in the array
     private int searchIndex = -1; //Holds the index in the array of a variable found in array
 
     //reads in data from text file to the array of generics objects
-    public GenericsKB_Array(String textFile)
+    public GenericsKbArrayApp(String textFile)
     {
         readFile(textFile);
     }

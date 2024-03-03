@@ -1,8 +1,5 @@
 package App;
 
-import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
 import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -11,12 +8,12 @@ import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 
-public class GenericsKB_BST
+public class GenericsKbBSTApp
 {
     private BinarySearchTree<Generic> bst = new BinarySearchTree<>();
 
     //Reads in data from file and populates the BST
-    public GenericsKB_BST(String file)
+    public GenericsKbBSTApp(String file)
     {
         readFile(file);
     }
