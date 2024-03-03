@@ -5,6 +5,7 @@
 package App;
 
 import java.io.File;
+import javax.swing.JFileChooser;
 
 /**
  *
@@ -38,7 +39,9 @@ public class MainMenu extends javax.swing.JFrame
         btnArray = new javax.swing.JButton();
         lblFileName = new javax.swing.JLabel();
         txtFileName = new javax.swing.JTextField();
+        lblIntructions = new javax.swing.JLabel();
         lblError = new javax.swing.JLabel();
+        btnChooseFile = new javax.swing.JButton();
         lblBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -56,7 +59,7 @@ public class MainMenu extends javax.swing.JFrame
 
         lblHome2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         lblHome2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblHome2.setText("Welcome, Please Enter The Name Of The Text File With The ");
+        lblHome2.setText("Welcome, Please Choose The File With The ");
         lblHome2.setToolTipText("");
         pnlMenu.add(lblHome2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 780, 50));
 
@@ -82,13 +85,31 @@ public class MainMenu extends javax.swing.JFrame
 
         lblFileName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblFileName.setText("File Name:");
-        pnlMenu.add(lblFileName, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, 70, 20));
-        pnlMenu.add(txtFileName, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 150, 210, -1));
+        pnlMenu.add(lblFileName, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 70, 20));
+
+        txtFileName.setEditable(false);
+        pnlMenu.add(txtFileName, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, 210, -1));
+
+        lblIntructions.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        lblIntructions.setForeground(new java.awt.Color(255, 0, 0));
+        lblIntructions.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIntructions.setText("Please Press The Choose File Button To Select Your File");
+        pnlMenu.add(lblIntructions, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 800, 20));
 
         lblError.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         lblError.setForeground(new java.awt.Color(255, 0, 0));
         lblError.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         pnlMenu.add(lblError, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 480, 800, 20));
+
+        btnChooseFile.setText("Choose File");
+        btnChooseFile.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnChooseFileActionPerformed(evt);
+            }
+        });
+        pnlMenu.add(btnChooseFile, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 150, -1, -1));
 
         lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App/lib/Background image.jpg"))); // NOI18N
         lblBackground.setName(""); // NOI18N
@@ -145,6 +166,26 @@ public class MainMenu extends javax.swing.JFrame
         }
     }//GEN-LAST:event_btnBSTActionPerformed
 
+    private void btnChooseFileActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnChooseFileActionPerformed
+    {//GEN-HEADEREND:event_btnChooseFileActionPerformed
+        lblError.setText("");
+        String path = "";
+        JFileChooser j = new JFileChooser();
+        j.setFileSelectionMode(JFileChooser.FILES_ONLY);
+        int x = j.showSaveDialog(this);
+        
+        if(x==JFileChooser.APPROVE_OPTION)
+        {
+            
+            path = j.getSelectedFile().getPath();
+            txtFileName.setText(path);
+        }
+        else
+        {
+            lblError.setText("Please Enter a text file");
+        }
+    }//GEN-LAST:event_btnChooseFileActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -197,11 +238,13 @@ public class MainMenu extends javax.swing.JFrame
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnArray;
     private javax.swing.JButton btnBST;
+    private javax.swing.JButton btnChooseFile;
     private javax.swing.JLabel lblBackground;
     private javax.swing.JLabel lblError;
     private javax.swing.JLabel lblFileName;
     private javax.swing.JLabel lblHome1;
     private javax.swing.JLabel lblHome2;
+    private javax.swing.JLabel lblIntructions;
     private javax.swing.JPanel pnlMenu;
     private javax.swing.JTextField txtFileName;
     // End of variables declaration//GEN-END:variables

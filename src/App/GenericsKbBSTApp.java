@@ -103,7 +103,6 @@ public class GenericsKbBSTApp
         DefaultTableModel model =(DefaultTableModel) table.getModel();
         model.setRowCount(0);
         Object rowData [] = new Object[3];
-        System.out.println(genericArr.size());
         for(int i =0; i < genericArr.size(); i++)
         {
             rowData[0] = genericArr.get(i).getTerm();
