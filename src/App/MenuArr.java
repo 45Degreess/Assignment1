@@ -17,7 +17,7 @@ public class MenuArr extends javax.swing.JFrame
     /**
      * Creates new form MenuArr
      */
-    private GenericsKB_Array arr;
+    private GenericsKbArrayApp arr;
     
     public MenuArr()
     {
@@ -26,7 +26,7 @@ public class MenuArr extends javax.swing.JFrame
     public MenuArr(String fileName)
     {
         initComponents();
-        arr = new GenericsKB_Array(fileName);
+        arr = new GenericsKbArrayApp(fileName);
         //Disables the editing of the table by the user
         pnlHome.setVisible(true);
         pnlSearch.setVisible(false);

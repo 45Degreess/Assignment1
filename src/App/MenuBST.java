@@ -5,7 +5,6 @@
 package App;
 
 import java.io.File;
-import javax.swing.table.TableColumnModel;
 
 /**
  *
@@ -17,7 +16,7 @@ public class MenuBST extends javax.swing.JFrame
     /**
      * Creates new form MenuArr
      */
-    private GenericsKB_BST arr;
+    private GenericsKbBSTApp arr;
     
     public MenuBST()
     {
@@ -26,7 +25,7 @@ public class MenuBST extends javax.swing.JFrame
     public MenuBST(String fileName)
     {
         initComponents();
-        arr = new GenericsKB_BST(fileName);
+        arr = new GenericsKbBSTApp(fileName);
         //Disables the editing of the table by the user
         pnlHome.setVisible(true);
         pnlSearch.setVisible(false);
