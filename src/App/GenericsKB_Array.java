@@ -13,17 +13,20 @@ import java.util.Locale;
 
 public class GenericsKB_Array
 {
-    private Generic [] genericArr;
-    private int size; // Variable storing the amount of elements in the array
+    private Generic[] genericArr = new Generic[2000000];
+    private int size = 0; // Variable storing the amount of elements in the array
     private int searchIndex = -1; //Holds the index in the array of a variable found in array
 
     //reads in data from text file to the array of generics objects
     public GenericsKB_Array(String textFile)
     {
+        readFile(textFile);
+    }
+
+    public void readFile(String textFile)
+    {
         try
         {
-            genericArr = new Generic[2000000];
-            size = 0;
             BufferedReader ff = new BufferedReader(new FileReader(textFile));
             String line;
             while((line = ff.readLine()) != null)
@@ -127,6 +130,7 @@ public class GenericsKB_Array
     public TableModel populateTable(JTable table)
     {
         DefaultTableModel model =(DefaultTableModel) table.getModel();
+        model.setRowCount(0);
         Object rowData [] = new Object[3];
 
         for(int i =0; i < size; i++)

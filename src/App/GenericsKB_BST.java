@@ -1,5 +1,8 @@
 package App;
 
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -14,6 +17,11 @@ public class GenericsKB_BST
 
     //Reads in data from file and populates the BST
     public GenericsKB_BST(String file)
+    {
+        readFile(file);
+    }
+
+    public void readFile(String file)
     {
         try
         {
@@ -68,13 +76,37 @@ public class GenericsKB_BST
         return null;
     }
 
-    public void userAdd(String term,String sentence, double confidence)
+    public String userAdd(String term,String sentence, double confidence)
     {
         Generic insert = new Generic(term,sentence,confidence);
         BSTNode<Generic> node = bst.search(insert);
         if(node == null)
+        {
             bst.insert(insert);
+            return "A new term was added to the database";
+        }
         else if(node.getData().getConfidence_score() <confidence)
+        {
             node.getData().update(sentence, confidence);
+            return "The term in the database was updated";
+        }
+        return "The confidence score inputed is lower than the existing score";
     }
+
+    /*
+    public TableModel populateTable(JTable table)
+    {
+        DefaultTableModel model =(DefaultTableModel) table.getModel();
+        model.setRowCount(0);
+        Object rowData [] = new Object[3];
+
+        for(int i =0; i < size; i++)
+        {
+            rowData[0] = genericArr[i].getTerm();
+            rowData[1] = genericArr[i].getSentence();
+            rowData[2] = genericArr[i].getConfidence_score();
+            model.addRow(rowData);
+        }
+        return model;
+    }*/
 }
