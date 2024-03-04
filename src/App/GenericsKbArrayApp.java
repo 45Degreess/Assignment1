@@ -101,7 +101,7 @@ public class GenericsKbArrayApp
     }
 
     /**
-     * @paramthe statement of the term given if the term is on the database
+     * @param term statement of the term given if the term is on the database
      * @return  the statement of the term given if the term is on the database
      */
     public String display(String term)
