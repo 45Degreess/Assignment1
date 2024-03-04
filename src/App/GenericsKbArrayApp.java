@@ -11,18 +11,37 @@ import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 
+/**
+ * Manager Class the defines all the functions needed for the Generics Array App
+ */
 public class GenericsKbArrayApp
 {
+    /**
+     * Stores an array of {@link Generic} objects
+     */
     private Generic[] genericArr = new Generic[2000000];
+    /**
+     * Stores the current of amount of elements in the array
+     */
     private int size = 0; // Variable storing the amount of elements in the array
-    private int searchIndex = -1; //Holds the index in the array of a variable found in array
+    /**
+     * Stores the index in the array of an elements after a search has been done
+     */
+    private int searchIndex = -1;
 
-    //reads in data from text file to the array of generics objects
+    /**
+     * Constructor method
+     * @param textFile the path of the text file holding knowledge base
+     */
     public GenericsKbArrayApp(String textFile)
     {
         readFile(textFile);
     }
 
+    /**
+     * method to reads in data from text file to the array of generics objects
+     * @param textFile the path of the text file holding knowledge base
+     */
     public void readFile(String textFile)
     {
         try
@@ -62,7 +81,11 @@ public class GenericsKbArrayApp
         }
     }
 
-    //Linear search that goes through the array sequentially until the term is found, returns a null String if nothing is found
+    /**
+     * Linear search that goes through the array sequentially until the term is found
+     * @param term holds the term to be searched for
+     * @return a {@link Generic} Object if term is found else return null
+     */
     private Generic search(String term)
     {
         for (int i = 0; i <size; i++)
@@ -77,7 +100,10 @@ public class GenericsKbArrayApp
         return null;
     }
 
-    //returns the statement of the term given if the term is on the database
+    /**
+     * @paramthe statement of the term given if the term is on the database
+     * @return  the statement of the term given if the term is on the database
+     */
     public String display(String term)
     {
         Generic temp = search(term);
@@ -88,7 +114,11 @@ public class GenericsKbArrayApp
         return "The term is not in the database";
     }
 
-    //returns the confidence score of the term if the term is in the database.
+    /**
+     * @param term the term in which the statement is going to be displayed
+     * @param sentence the sentence in which the statement is going to be displayed
+     * @return the confidence score of the term if the term is in the database.
+     */
     public String display(String term, String sentence)
     {
         Generic temp = search(term);
@@ -106,6 +136,13 @@ public class GenericsKbArrayApp
         return "The term is not in the database";
     }
 
+    /**
+     * Method that allows the user to input a new term and statement into the database
+     * @param term the term to be inserted into the knowledge base
+     * @param sentence the sentence of the term to be inserted into the knowledge base
+     * @param confidence the confidence score of the term to be inserted into the knowledge base
+     * @return return a {@link String} representing the outcome of the user add method
+     */
     public String userAdd(String term,String sentence, double confidence)
     {
         Generic present = search(term);
@@ -127,6 +164,11 @@ public class GenericsKbArrayApp
         }
     }
 
+    /**
+     * Method to create a {@link TableModel} to add terms to table
+     * @param table a {@link JTable} where the terms will be displayed in GUI
+     * @return TableModel with terms
+     */
     public TableModel populateTable(JTable table)
     {
         DefaultTableModel model =(DefaultTableModel) table.getModel();

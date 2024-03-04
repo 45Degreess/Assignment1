@@ -12,16 +12,31 @@ import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.Locale;
 
+/**
+ * Manager Class the defines all the functions needed for the Generics BinarySearchTree App
+ */
 public class GenericsKbBSTApp
 {
+    /**
+     * Stores a {@link BinarySearchTree} Object of type {@link Generic}
+     */
     private BinarySearchTree<Generic> bst = new BinarySearchTree<>();
 
     //Reads in data from file and populates the BST
+
+    /**
+     *  Constructor method
+     * @param file the path of the text file holding knowledge base
+     */
     public GenericsKbBSTApp(String file)
     {
         readFile(file);
     }
 
+    /**
+     * method to reads in data from text file to the array of generics objects
+     * @param file the path of the text file holding knowledge base
+     */
     public void readFile(String file)
     {
         try
@@ -52,6 +67,11 @@ public class GenericsKbBSTApp
         }
     }
 
+    /**
+     * Uses the search function of the {@link BinarySearchTree} to finds a {@link BSTNode} with the same term
+     * @param term the statement of the term given if the term is on the database
+     * @return the statement of the term given if the term is on the database
+     */
     public String display(String term)
     {
         BSTNode<Generic> node = bst.search(new Generic(term,"",0));
@@ -60,6 +80,11 @@ public class GenericsKbBSTApp
         return null;
     }
 
+    /**
+     * @param term the term in which the statement is going to be displayed
+     * @param sentence the sentence in which the statement is going to be displayed
+     * @return the confidence score of the term if the term is in the database.
+     */
     public String display(String term, String sentence)
     {
         BSTNode<Generic> node = bst.search(new Generic(term,"",0));
@@ -77,6 +102,13 @@ public class GenericsKbBSTApp
         return null;
     }
 
+    /**
+     * Method that allows the user to input a new term and statement into the database
+     * @param term the term to be inserted into the knowledge base
+     * @param sentence the sentence of the term to be inserted into the knowledge base
+     * @param confidence the confidence score of the term to be inserted into the knowledge base
+     * @return return a {@link String} representing the outcome of the user add method
+     */
     public String userAdd(String term,String sentence, double confidence)
     {
         Generic insert = new Generic(term,sentence,confidence);
@@ -95,8 +127,11 @@ public class GenericsKbBSTApp
     }
 
 
-
-
+    /**
+     * Method to create a {@link TableModel} to add terms to table
+     * @param table a {@link JTable} where the terms will be displayed in GUI
+     * @return TableModel with terms
+     */
     public TableModel populateTable(JTable table)
     {
         ArrayList<Generic> genericArr= bst.getTableData();

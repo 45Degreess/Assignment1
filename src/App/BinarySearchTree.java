@@ -2,16 +2,29 @@ package App;
 
 import java.util.ArrayList;
 
+/**
+ * Class that creates a BinarySearchTree
+ * @param <dataType> Generic Datatype for object
+ */
 public class BinarySearchTree<dataType extends Comparable>
 {
+    /**
+     * Stores the root node for the BinarySearchTree
+     */
     BSTNode<dataType> root;
 
+    /**
+     * Constructor method
+     */
     public BinarySearchTree()
     {
         root =null;
     }
 
-    //Gets the numbers of parts from the root node to the lowest leaf node ie the height of a tree
+    /**
+     * Gets the numbers of parts from the root node to the lowest leaf node ie the height of a tree
+     * @return the height of the BinarySearchTree
+     */
     public int getHeight()
     {
         return getHeight(root);
@@ -25,8 +38,9 @@ public class BinarySearchTree<dataType extends Comparable>
             return 1 + Math.max(getHeight(node.getLeft()),getHeight(node.getRight()));
     }
 
-    //Find the size of the tree ie the number of nodes in the tree
-
+    /**Find the size of the tree ie the number of nodes in the tree
+     * @return the size of the tree
+     */
     public int getSize()
     {
         return getSize(root);
@@ -40,7 +54,9 @@ public class BinarySearchTree<dataType extends Comparable>
             return 1 + getSize(node.getLeft()) + getSize(node.getRight());
     }
 
-    //Inserts data in the tree
+    /**Inserts data in the tree
+     * @param d Object to be inserted into the tree
+     */
     public void insert(dataType d)
     {
         if(root ==null)
@@ -67,7 +83,11 @@ public class BinarySearchTree<dataType extends Comparable>
         }
     }
 
-    //recursively iterates through the BinarySearchTree and returns a value if the data matches
+    /**
+     * recursively iterates through the BinarySearchTree
+     * @param d Object to search the BinarySearch tree for a matching Object
+     * @return  A {@link BSTNode} of the Object type if the data matches
+     */
     public BSTNode<dataType> search(dataType d)
     {
         if(root == null)
@@ -97,11 +117,21 @@ public class BinarySearchTree<dataType extends Comparable>
 
 
     //Code used to populate table
+
+    /**
+     * Visits a node in the tree
+     * @param node the node to visit
+     * @return the data in the node
+     */
     private dataType visit ( BSTNode<dataType> node )
     {
         return node.getData();
     }
 
+    /**
+     * Gets the list of the data in the tree used to populate a table in a GUI
+     * @return list of all nodes in tree
+     */
     public ArrayList<dataType> getTableData()
     {
         ArrayList<dataType> temp = new ArrayList<>();

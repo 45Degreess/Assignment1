@@ -1,13 +1,33 @@
-package App;//Class used to store the term, the generic sentence and the confidence score
+package App;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 
+/**
+ * Class used to store the term, the generic sentence and the confidence score
+ * @author Chidiebere Umah
+ */
 public class Generic implements Comparable<Generic>
 {
-    private String term,sentence;
+    /**
+     * The variable storing a term in the knowledge base
+     */
+    private String term;
+    /**
+     * The sentence describing the term
+     */
+    private String sentence;
+    /**
+     * The confidence score of the term
+     */
     private double confidence_score;
 
+    /**
+     * Contructer method of Generic Object
+     * @param term the term incoming
+     * @param sentence the sentence incoming
+     * @param confidence_score the confidence score incoming
+     */
     public Generic(String term,String sentence, double confidence_score)
     {
         this.term = term;
@@ -15,25 +35,34 @@ public class Generic implements Comparable<Generic>
         this.confidence_score = confidence_score;
     }
 
-    //copy constructor
+    /**
+     * copy constructor
+     * @param other another Genric Object to make a copy
+     */
     public Generic(Generic other)
     {
         new Generic(other.term,other.sentence,other.confidence_score);
     }
 
-    //Method to access the term value
+    /**
+     * @return the value of the term
+     */
     public String getTerm()
     {
         return term;
     }
 
-    //Method to access the generic sentence
+    /**
+     * @return the value of sentence of the term
+     */
     public String getSentence()
     {
         return sentence;
     }
 
-    //Method to access the confidence score
+    /**
+     * @return The confidence score of the term
+     */
     public double getConfidence_score()
     {
         //Return confidence score rounded of to 3 decimal places
@@ -43,19 +72,31 @@ public class Generic implements Comparable<Generic>
         return confidence_score;
     }
 
-    //Method that checks if the term parsed through is the same as the term of the Generic object
+    /**
+     * Method that checks if the term parsed through is the same as the term of the Generic object
+     * @param term incoming term value
+     * @return True if terms are the same, False otherwise
+     */
     public boolean equals(String term)
     {
         return this.term.equalsIgnoreCase(term);
     }
 
-    //Method to update the sentence given the term
+    /**
+     * Method to update the sentence and the confidence score of the Object
+     * @param inSentence incoming Sentence
+     * @param inConfidence incoming confidence score
+     */
     public void update(String inSentence,double inConfidence)
     {
         sentence = inSentence;
         confidence_score = inConfidence;
     }
 
+    /**
+     *
+     * @return Values sentence and Confidence Score of the object in the format "[Sentence] (Confidence score: [confidence score])
+     */
     public String toString()
     {
         DecimalFormat deci = new DecimalFormat("0.00");
@@ -64,6 +105,10 @@ public class Generic implements Comparable<Generic>
         return sentence + " (Confidence score: "+ deci.format(confidence_score) +")";
     }
 
+    /**
+     * @param other the object to be compared.
+     * @return which term is bigger/smaller
+     */
     public int compareTo(Generic other)
     {
             return term.toLowerCase().compareTo(other.term.toLowerCase());
