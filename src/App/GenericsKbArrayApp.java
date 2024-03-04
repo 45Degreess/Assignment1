@@ -43,7 +43,7 @@ public class GenericsKbArrayApp
                 }
                 else
                 {
-                    if(present.getConfidence_score() < confidence)
+                    if(present.getConfidence_score() <= confidence)
                     {
                         genericArr[searchIndex].update(sentence, confidence);
                         searchIndex = -1;
@@ -117,7 +117,7 @@ public class GenericsKbArrayApp
         }
         else
         {
-            if(present.getConfidence_score() < confidence)
+            if(present.getConfidence_score() <= confidence)
             {
                 genericArr[searchIndex].update(sentence, confidence);
                 searchIndex = -1;

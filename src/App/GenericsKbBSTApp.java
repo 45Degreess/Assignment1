@@ -37,7 +37,7 @@ public class GenericsKbBSTApp
                 BSTNode<Generic> present = bst.search(new Generic(term,sentence,confidence));
                 if(present == null)
                     bst.insert(new Generic(term, sentence, confidence));
-                else if(present.getData().getConfidence_score() <confidence)
+                else if(present.getData().getConfidence_score() <=confidence)
                     present.getData().update(sentence, confidence);
             }
             ff.close();
@@ -86,7 +86,7 @@ public class GenericsKbBSTApp
             bst.insert(insert);
             return "A new term was added to the database";
         }
-        else if(node.getData().getConfidence_score() <confidence)
+        else if(node.getData().getConfidence_score() <=confidence)
         {
             node.getData().update(sentence, confidence);
             return "The term in the database was updated";
