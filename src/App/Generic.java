@@ -66,6 +66,6 @@ public class Generic implements Comparable<Generic>
 
     public int compareTo(Generic other)
     {
-            return term.compareTo(other.term);
+            return term.toLowerCase().compareTo(other.term.toLowerCase());
     }
 }
