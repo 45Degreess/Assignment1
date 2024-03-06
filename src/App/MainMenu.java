@@ -29,8 +29,7 @@ public class MainMenu extends javax.swing.JFrame
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         pnlMenu = new javax.swing.JPanel();
         lblHome1 = new javax.swing.JLabel();
@@ -45,7 +44,6 @@ public class MainMenu extends javax.swing.JFrame
         lblBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(null);
         setPreferredSize(null);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -64,20 +62,16 @@ public class MainMenu extends javax.swing.JFrame
         pnlMenu.add(lblHome2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 780, 50));
 
         btnBST.setText("Binary Search Tree Data Structure");
-        btnBST.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        btnBST.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBSTActionPerformed(evt);
             }
         });
         pnlMenu.add(btnBST, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 320, 350, 90));
 
         btnArray.setText("Array Data Structure");
-        btnArray.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        btnArray.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnArrayActionPerformed(evt);
             }
         });
@@ -102,10 +96,8 @@ public class MainMenu extends javax.swing.JFrame
         pnlMenu.add(lblError, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 480, 800, 20));
 
         btnChooseFile.setText("Choose File");
-        btnChooseFile.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        btnChooseFile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnChooseFileActionPerformed(evt);
             }
         });
