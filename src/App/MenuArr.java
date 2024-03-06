@@ -49,8 +49,7 @@ public class MenuArr extends javax.swing.JFrame
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         pnlSidebar = new javax.swing.JPanel();
         pnlHomeArr = new javax.swing.JPanel();
@@ -106,10 +105,8 @@ public class MenuArr extends javax.swing.JFrame
         pnlSidebar.setBackground(new java.awt.Color(153, 169, 215));
 
         pnlHomeArr.setBackground(new java.awt.Color(182, 202, 231));
-        pnlHomeArr.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        pnlHomeArr.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pnlHomeArrMouseClicked(evt);
             }
         });
@@ -120,10 +117,8 @@ public class MenuArr extends javax.swing.JFrame
         pnlHomeArr.add(lblHomeArr, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, -1, 27));
 
         pnlSearchArr.setBackground(new java.awt.Color(182, 202, 231));
-        pnlSearchArr.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        pnlSearchArr.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pnlSearchArrMouseClicked(evt);
             }
         });
@@ -134,10 +129,8 @@ public class MenuArr extends javax.swing.JFrame
         pnlSearchArr.add(lblSearchArr, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, 27));
 
         pnlAddTerm.setBackground(new java.awt.Color(182, 202, 231));
-        pnlAddTerm.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        pnlAddTerm.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pnlAddTermMouseClicked(evt);
             }
         });
@@ -148,10 +141,8 @@ public class MenuArr extends javax.swing.JFrame
         pnlAddTerm.add(lblAddArr, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, 27));
 
         pnlLoadKnowledgeArr.setBackground(new java.awt.Color(182, 202, 231));
-        pnlLoadKnowledgeArr.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        pnlLoadKnowledgeArr.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pnlLoadKnowledgeArrMouseClicked(evt);
             }
         });
@@ -189,12 +180,10 @@ public class MenuArr extends javax.swing.JFrame
         pnlHome.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tblHome.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][]
-            {
+            new Object [][] {
 
             },
-            new String []
-            {
+            new String [] {
                 "Terms", "Sentence", "Confidence Score"
             }
         ));
@@ -208,16 +197,14 @@ public class MenuArr extends javax.swing.JFrame
         pnlHome.add(lblHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 0, 380, 50));
 
         ChangeDataStructure.setText("Change Data Structure");
-        ChangeDataStructure.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        ChangeDataStructure.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ChangeDataStructureActionPerformed(evt);
             }
         });
         pnlHome.add(ChangeDataStructure, new org.netbeans.lib.awtextra.AbsoluteConstraints(575, 450, 180, -1));
 
-        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App/lib/Background image.jpg"))); // NOI18N
+        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App/Background image.jpg"))); // NOI18N
         lblBackground.setName(""); // NOI18N
         pnlHome.add(lblBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 510));
 
@@ -228,10 +215,8 @@ public class MenuArr extends javax.swing.JFrame
         lblEnterSentence.setText("Enter Sentence:");
         pnlSearch.add(lblEnterSentence, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 90, 20));
 
-        txtEnterSentence.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        txtEnterSentence.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEnterSentenceActionPerformed(evt);
             }
         });
@@ -251,10 +236,8 @@ public class MenuArr extends javax.swing.JFrame
         lblSearchTerms.setText("Search By Term");
         pnlSearch.add(lblSearchTerms, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 380, 50));
 
-        txtEnterTerm.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        txtEnterTerm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEnterTermActionPerformed(evt);
             }
         });
@@ -266,10 +249,8 @@ public class MenuArr extends javax.swing.JFrame
         pnlSearch.add(lblErrorSearchTerm, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 480, 800, 20));
 
         btnSearchTerm.setText("Search");
-        btnSearchTerm.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        btnSearchTerm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchTermActionPerformed(evt);
             }
         });
@@ -282,7 +263,7 @@ public class MenuArr extends javax.swing.JFrame
 
         pnlSearch.add(scpTermSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, 670, 160));
 
-        lblBackground1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App/lib/Background image.jpg"))); // NOI18N
+        lblBackground1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App/Background image.jpg"))); // NOI18N
         lblBackground1.setName(""); // NOI18N
         pnlSearch.add(lblBackground1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 510));
 
@@ -294,10 +275,8 @@ public class MenuArr extends javax.swing.JFrame
         pnlAdd.add(lblAddScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, 140, 20));
 
         btnSubmit.setText("Submit");
-        btnSubmit.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSubmitActionPerformed(evt);
             }
         });
@@ -311,10 +290,8 @@ public class MenuArr extends javax.swing.JFrame
         lblAddTerm.setText("Enter Term:");
         pnlAdd.add(lblAddTerm, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 70, 20));
 
-        txtAddTerm.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        txtAddTerm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtAddTermActionPerformed(evt);
             }
         });
@@ -323,10 +300,8 @@ public class MenuArr extends javax.swing.JFrame
         lblAddSentence.setText("Enter Sentence:");
         pnlAdd.add(lblAddSentence, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 90, 20));
 
-        txtAddSentence.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        txtAddSentence.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtAddSentenceActionPerformed(evt);
             }
         });
@@ -343,16 +318,14 @@ public class MenuArr extends javax.swing.JFrame
         lblIntructions1.setText("Enter the term,sentence and cofidence score to add new term or update existing term.");
         pnlAdd.add(lblIntructions1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 800, 20));
 
-        txtAddScore.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        txtAddScore.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtAddScoreActionPerformed(evt);
             }
         });
         pnlAdd.add(txtAddScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 450, -1));
 
-        lblBackground2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App/lib/Background image.jpg"))); // NOI18N
+        lblBackground2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App/Background image.jpg"))); // NOI18N
         lblBackground2.setName(""); // NOI18N
         pnlAdd.add(lblBackground2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 510));
 
@@ -381,10 +354,8 @@ public class MenuArr extends javax.swing.JFrame
         pnlLoad.add(txtLoad, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, 310, -1));
 
         btnLoad.setText("Load");
-        btnLoad.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        btnLoad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoadActionPerformed(evt);
             }
         });

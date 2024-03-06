@@ -103,7 +103,7 @@ public class MainMenu extends javax.swing.JFrame
         });
         pnlMenu.add(btnChooseFile, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 150, -1, -1));
 
-        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App/lib/Background image.jpg"))); // NOI18N
+        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App/Background image.jpg"))); // NOI18N
         lblBackground.setName(""); // NOI18N
         pnlMenu.add(lblBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 510));
 
