@@ -7,13 +7,13 @@ JFLAGS = --module-path "lib/" --add-modules AbsoluteLayout -cp "bin"
 SOURCES = $(wildcard src/App/*.java)
 
 build:
-        $(JC) $(JCFLAGS) $(SOURCES)
+	$(JC) $(JCFLAGS) $(SOURCES)
 
 run:
-        $(JAVA) $(JFLAGS) App.MainMenu
+	$(JAVA) $(JFLAGS) App.MainMenu
 
 deafult:
-        build
+	build
 
 clean:
-        rm bin/App/*.class
+	rm bin/App/*.class
