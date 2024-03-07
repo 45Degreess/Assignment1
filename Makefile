@@ -2,17 +2,18 @@ JC = javac
 JAVA = java
 
 #Flags for java command
-JCFLAGS = --module-path "lib/" --add-modules AbsoluteLayout -d "bin" src/App/*.java
-JFLAGS = --module-path "lib/" --add-modules AbsoluteLayout -cp "bin" App.MainMenu
+JCFLAGS = --module-path "lib/" --add-modules AbsoluteLayout -d "bin"
+JFLAGS = --module-path "lib/" --add-modules AbsoluteLayout -cp "bin"
+SOURCES = $(wildcard src/App/*.java)
 
 build:
-	$(JC) $(JCFLAG)
+        $(JC) $(JCFLAGS) $(SOURCES)
 
-run: 
-	$(JAVA) $(JFLAGS)
+run:
+        $(JAVA) $(JFLAGS) App.MainMenu
 
-deafult: 
-	build
+deafult:
+        build
 
 clean:
-	rm -cp bin/App/*.class
+        rm bin/App/*.class
