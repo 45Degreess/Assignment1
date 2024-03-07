@@ -103,7 +103,21 @@ public class MainMenu extends javax.swing.JFrame
         });
         pnlMenu.add(btnChooseFile, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 150, -1, -1));
 
-        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App/Background image.jpg"))); // NOI18N
+        String relativePath = "src/App/Background image.jpg";
+        String relativePath1 = "App/Background image.jpg";
+        File fileTemp = new File("");
+        if(fileTemp.getAbsolutePath().contains("src"))
+        {
+            File file = new File(relativePath1);
+            String absolutePath = file.getAbsolutePath();
+            lblBackground.setIcon(new javax.swing.ImageIcon(absolutePath)); // NOI18N
+        }
+        else
+        {
+            File file = new File(relativePath);
+            String absolutePath = file.getAbsolutePath();
+            lblBackground.setIcon(new javax.swing.ImageIcon(absolutePath)); // NOI18N
+        }
         lblBackground.setName(""); // NOI18N
         pnlMenu.add(lblBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 510));
 

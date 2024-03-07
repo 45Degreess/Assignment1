@@ -204,7 +204,21 @@ public class MenuArr extends javax.swing.JFrame
         });
         pnlHome.add(ChangeDataStructure, new org.netbeans.lib.awtextra.AbsoluteConstraints(575, 450, 180, -1));
 
-        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App/Background image.jpg"))); // NOI18N
+        String relativePath = "src/App/Background image.jpg";
+        String relativePath1 = "App/Background image.jpg";
+        File fileTemp = new File("");
+        if(fileTemp.getAbsolutePath().contains("src"))
+        {
+            File file = new File(relativePath1);
+            String absolutePath = file.getAbsolutePath();
+            lblBackground.setIcon(new javax.swing.ImageIcon(absolutePath)); // NOI18N
+        }
+        else
+        {
+            File file = new File(relativePath);
+            String absolutePath = file.getAbsolutePath();
+            lblBackground.setIcon(new javax.swing.ImageIcon(absolutePath)); // NOI18N
+        } // NOI18N
         lblBackground.setName(""); // NOI18N
         pnlHome.add(lblBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 510));
 
@@ -263,7 +277,18 @@ public class MenuArr extends javax.swing.JFrame
 
         pnlSearch.add(scpTermSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, 670, 160));
 
-        lblBackground1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App/Background image.jpg"))); // NOI18N
+        if(fileTemp.getAbsolutePath().contains("src"))
+        {
+            File file = new File(relativePath1);
+            String absolutePath = file.getAbsolutePath();
+            lblBackground1.setIcon(new javax.swing.ImageIcon(absolutePath)); // NOI18N
+        }
+        else
+        {
+            File file = new File(relativePath);
+            String absolutePath = file.getAbsolutePath();
+            lblBackground1.setIcon(new javax.swing.ImageIcon(absolutePath)); // NOI18N
+        } // NOI18N
         lblBackground1.setName(""); // NOI18N
         pnlSearch.add(lblBackground1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 510));
 
@@ -325,7 +350,18 @@ public class MenuArr extends javax.swing.JFrame
         });
         pnlAdd.add(txtAddScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 450, -1));
 
-        lblBackground2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App/Background image.jpg"))); // NOI18N
+        if(fileTemp.getAbsolutePath().contains("src"))
+        {
+            File file = new File(relativePath1);
+            String absolutePath = file.getAbsolutePath();
+            lblBackground2.setIcon(new javax.swing.ImageIcon(absolutePath)); // NOI18N
+        }
+        else
+        {
+            File file = new File(relativePath);
+            String absolutePath = file.getAbsolutePath();
+            lblBackground2.setIcon(new javax.swing.ImageIcon(absolutePath)); // NOI18N
+        } // NOI18N
         lblBackground2.setName(""); // NOI18N
         pnlAdd.add(lblBackground2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 510));
 
@@ -361,7 +397,18 @@ public class MenuArr extends javax.swing.JFrame
         });
         pnlLoad.add(btnLoad, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 280, -1, -1));
 
-        lblBackground3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App/lib/Background image.jpg"))); // NOI18N
+        if(fileTemp.getAbsolutePath().contains("src"))
+        {
+            File file = new File(relativePath1);
+            String absolutePath = file.getAbsolutePath();
+            lblBackground3.setIcon(new javax.swing.ImageIcon(absolutePath)); // NOI18N
+        }
+        else
+        {
+            File file = new File(relativePath);
+            String absolutePath = file.getAbsolutePath();
+            lblBackground3.setIcon(new javax.swing.ImageIcon(absolutePath)); // NOI18N
+        }
         lblBackground3.setName(""); // NOI18N
         pnlLoad.add(lblBackground3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 510));
 
